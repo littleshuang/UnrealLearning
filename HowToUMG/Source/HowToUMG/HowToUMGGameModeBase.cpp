@@ -2,6 +2,7 @@
 
 #include "HowToUMGGameModeBase.h"
 #include "HowToUMG.h"
+#include "IGCloudVoiceEngine.h"
 
 void AHowToUMGGameModeBase::BeginPlay()
 {
@@ -23,6 +24,14 @@ void AHowToUMGGameModeBase::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetC
         {
             CurrentWidget->AddToViewport();
         }
+    }
+}
+
+FString AHowToUMGGameModeBase::TestGVoice(){
+    if(GCloud::GVoice::GetVoiceEngine() != nullptr){
+        return "success";
+    }else{
+        return "fail";
     }
 }
 

@@ -23,6 +23,10 @@ public:
     UFUNCTION(BlueprintCallable, Category = "UMG Game")
     void ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass);
     
+    /** 调用GVoice服务 */
+    UFUNCTION(BlueprintCallable, Category = "UMG Game")
+    FString TestGVoice();
+    
 protected:
     /** 在游戏开始时我们将作为菜单使用的控件类。 */
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UMG Game")
